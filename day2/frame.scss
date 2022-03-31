@@ -1,0 +1,122 @@
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #ffcec4;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.menu-icon {
+	
+	.bar {
+		z-index: 1;
+		margin: 20px 0;
+		width: 80px;
+		height: 10px;
+		border-radius: 10px;
+		background: #fff;
+		-webkit-box-shadow: 3px 3px 4px 1px rgba(0,0,0,0.15); 
+		box-shadow: 				3px 3px 4px 1px rgba(0,0,0,0.15);
+	}
+	
+	&.active {
+		
+		@mixin anim($divName) {
+			animation: #{$divName}-activate .6s ease forwards;
+		}
+	
+		$divNames: top, mid, bot;
+	
+		@each $divName in $divNames {
+			.#{$divName} {
+				@include anim($divName);
+			}
+		}
+	
+	}
+	
+	&:not(.active):not(.initial) {
+		
+		@mixin anim($divName) {
+			animation: #{$divName}-deactivate .6s ease forwards;
+		}
+	
+		$divNames: top, mid, bot;
+	
+		@each $divName in $divNames {
+			.#{$divName} {
+				@include anim($divName);
+			}
+		}
+	
+	}
+}
+
+@mixin top-line { transform: translateY(30px); }
+
+@mixin mid-line { 
+	opacity: 0; 
+	transform: translateX(300px); 
+}
+
+@mixin bot-line { transform: translateY(-30px); }
+
+@mixin top-x { transform: translateY(30px) rotate(45deg);
+}
+
+@mixin mid-x { opacity: 0; }
+
+@mixin bot-x { transform: translateY(-30px) rotate(135deg); }
+
+@keyframes top-activate {
+	0% {}
+	50% { @include top-line; }
+	100% { @include top-x; }
+}
+
+@keyframes mid-activate {
+	0% {}
+	50% { @include mid-line; }
+	100% { @include mid-x; }
+}
+
+@keyframes bot-activate {
+	0% {}
+	50% {	@include bot-line; }
+	100% { @include bot-x; }
+}
+
+@keyframes top-deactivate {
+	0% { @include top-x; }
+	50% { @include top-line; }
+	100% {}
+}
+
+@keyframes mid-deactivate {
+	0% { @include mid-x; }
+	50% { @include mid-line; }
+	100% {}
+}
+
+@keyframes bot-deactivate {
+	0% { @include bot-x; }
+	50% {	@include bot-line; }
+	100% {}
+}
