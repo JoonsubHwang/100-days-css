@@ -1,5 +1,5 @@
-// use only the available space inside the 400x400 frame
 .frame {
+	$blue: #3467eb;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -10,7 +10,7 @@
   border-radius: 2px;
 	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
 	overflow: hidden;
-  background: #1862d9;
+  background: $blue;
   color: #333;
 
 	.center {
@@ -18,60 +18,60 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%,-50%);
-		
+
 		.loading {
-			div {
-				position: fixed;
-				background: white;
-				border-radius: 100px;
-				margin: auto;
-				transform: scale(0);
+			> div {
+				position: absolute;
+				border-radius: 35%;
+				background: #fff;
+				transform: scale(0) rotate(90deg);
 				box-shadow:
-					0  4px  5px rgba(0, 0, 0, 0.10),
-					0  5px  9px rgba(0, 0, 0, 0.12),
-					0 10px 16px rgba(0, 0, 0, 0.16),
-					0 25px 40px rgba(0, 0, 0, 0.24);
+					 2px  4px  5px rgba(0, 0, 0, 0.10),
+					 3px  6px  9px rgba(0, 0, 0, 0.12),
+					 5px 10px 16px rgba(0, 0, 0, 0.16),
+					12px 25px 40px rgba(0, 0, 0, 0.24);
 				
 				@for $i from 1 through 3 {
 					&:nth-child(#{$i}) {
-						$r: 70px - ($i * 20px);
-						z-index: $i;
-						top: -$r;
+						$r: 60px - ($i * 15px);
 						left: -$r;
+						top: -$r;
 						width: 2 * $r;
 						height: 2 * $r;
-						animation: 4s ease infinite both blink-#{$i};
+						animation: blink-#{$i} 6s ease infinite; 
 					}
 				}
 				
-					@keyframes blink-1 {
-						0% {
-							transform: scale(0);
-						}
-						45%, 57% {
-							transform: scale(1);
-						}
+				@keyframes blink-1 {
+					75% {
+						transform: scale(0) rotate(90deg);
 					}
-					@keyframes blink-2 {
-						15%, 85% {
-							transform: scale(0);
-						}
-						45%, 56% {
-							transform: scale(1);
-						}
+					15%, 50% {
+						transform: scale(1);
 					}
-					@keyframes blink-3 {
-						35%, 65% {
-							transform: scale(0);
-						}
-						45%, 55% {
-							transform: scale(1);
-						}
-					}
+				}
 				
+				@keyframes blink-2 {
+					10%, 70% {
+						transform: scale(0) rotate(90deg);
+					}
+					25%, 45% {
+						transform: scale(1);
+					}
+				}
+				
+				@keyframes blink-3 {
+					20%, 60% {
+						transform: scale(0) rotate(90deg);
+					}
+					35%, 40% {
+						transform: scale(1);
+					}
+				}
 			}
+			
 		}
-		
+
 	}
 	
 }
