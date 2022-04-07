@@ -1,0 +1,77 @@
+// use only the available space inside the 400x400 frame
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #1862d9;
+  color: #333;
+
+	.center {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		
+		.loading {
+			div {
+				position: fixed;
+				background: white;
+				border-radius: 100px;
+				margin: auto;
+				transform: scale(0);
+				box-shadow:
+					0  4px  5px rgba(0, 0, 0, 0.10),
+					0  5px  9px rgba(0, 0, 0, 0.12),
+					0 10px 16px rgba(0, 0, 0, 0.16),
+					0 25px 40px rgba(0, 0, 0, 0.24);
+				
+				@for $i from 1 through 3 {
+					&:nth-child(#{$i}) {
+						$r: 70px - ($i * 20px);
+						z-index: $i;
+						top: -$r;
+						left: -$r;
+						width: 2 * $r;
+						height: 2 * $r;
+						animation: 4s ease infinite both blink-#{$i};
+					}
+				}
+				
+					@keyframes blink-1 {
+						0% {
+							transform: scale(0);
+						}
+						45%, 57% {
+							transform: scale(1);
+						}
+					}
+					@keyframes blink-2 {
+						15%, 85% {
+							transform: scale(0);
+						}
+						45%, 56% {
+							transform: scale(1);
+						}
+					}
+					@keyframes blink-3 {
+						35%, 65% {
+							transform: scale(0);
+						}
+						45%, 55% {
+							transform: scale(1);
+						}
+					}
+				
+			}
+		}
+		
+	}
+	
+}
