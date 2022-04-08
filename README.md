@@ -8,7 +8,7 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 <br/><br/>
 
 
-
+## Table of Contents
 1. [Day 1](#Day-1) 
 2. [Day 2](#Day-2)
 3. [Day 3](#Day-3)
@@ -18,7 +18,7 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 
 
-## Day 1
+### Day 1
 
 [CodePen](https://codepen.io/joonsubhwang/pen/yLpXdOg)
 
@@ -26,7 +26,7 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 
 
-## Day 2
+### Day 2
 
 [CodePen](https://codepen.io/joonsubhwang/pen/yLpzzNG)
 
@@ -35,7 +35,7 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 
 
-## Day 3
+### Day 3
 
 [CodePen](https://codepen.io/joonsubhwang/pen/QWaOjMW)
 
@@ -44,7 +44,7 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 
 
-## Day 4
+### Day 4
 
 [CodePen](https://codepen.io/joonsubhwang/pen/xxpjxOo)
 
