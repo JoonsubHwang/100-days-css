@@ -1,0 +1,151 @@
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: gold;
+  color: #333;
+	font-family: sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+	.center {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		
+		section {
+			background: white;
+			box-shadow:
+				0  8px  5px rgba(0, 0, 0, 0.05),
+				0 13px  9px rgba(0, 0, 0, 0.06),
+				0 21px 16px rgba(0, 0, 0, 0.08),
+				0 50px 40px rgba(0, 0, 0, 0.12);
+			
+			.header {
+				height: 30px;
+				background: navy;
+				color: white;
+				display: flex;
+				padding: 15px;
+				
+				p {
+					margin: 0;
+				}
+				
+				.title {
+					margin-right: auto;
+					font-size: 14px;
+					
+					> p {
+						text-align: left;
+						font-weight: bold;
+						
+						&.date {
+							font-size: 11px;
+						}
+					}
+				}
+				
+				.summary {
+					font-size: 11px;
+					
+					> p {
+						text-align: right;
+						
+						&.value {
+							font-size: 14px;
+							font-weight: bold;
+						}
+					}
+				}
+			}
+			
+			.chart {
+				$margin: 10px;
+				$x-unit: 40px;
+				$y-unit: 40px;
+				$legend-height: 15px;
+				$category-height: 15px;
+				width: 6 * $x-unit;
+				height: $legend-height + (2 * $y-unit) + $category-height + (2 * $margin);
+				padding: 10px 20px;
+				
+				.legend {
+					height: $legend-height;
+					display: flex;
+					gap: 16px;
+					place-content: flex-end;
+					
+					> div {
+						display: flex;
+						gap: 5px;
+						place-items: center;
+						
+						div {
+							width: 12px;
+							height: 4px;
+							
+							&.red{
+								background: red;
+							}
+							
+							&.blue{
+								background: blue;
+							}
+						}
+						
+						p {
+							font-size: 9px;
+						}
+					}
+				}
+				
+				.graph {
+					margin: $margin 0;
+					width: 6 * $x-unit;
+					height: 2 * $y-unit;
+					
+					.yaxis {
+						$max: 2;
+						position: relative;
+						width: 6 * $x-unit;
+						border-top: 1px solid lightgray;
+						
+						@for $i from 0 through $max {
+							&.y#{$i} {
+								top: ($max - $i) * $y-unit;
+							}
+						}
+					}
+				}
+				
+				.categories{
+					$width: 20px;
+					margin-left: $width / -2;
+					height: $category-height;
+					display: flex;
+					gap: $x-unit - $width;
+					
+					p {
+						margin: 0;
+						width: $width;
+						height: 11px;
+						line-height: 11px;
+						font-size: 9px;
+						color: darkgray;
+					}
+				}
+			}
+		}
+		
+	}
+	
+}
