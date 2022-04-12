@@ -9,7 +9,7 @@
   border-radius: 2px;
 	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
 	overflow: hidden;
-  background: gold;
+  background: #ffcc00;
   color: #333;
 	font-family: sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -31,7 +31,7 @@
 			
 			.header {
 				height: 30px;
-				background: navy;
+				background: black;
 				color: white;
 				display: flex;
 				padding: 15px;
@@ -69,6 +69,8 @@
 			}
 			
 			.chart {
+				$red: #e64c4c;
+				$blue: #4c4ce6;
 				$margin: 10px;
 				$x-unit: 40px;
 				$y-unit: 40px;
@@ -94,11 +96,11 @@
 							height: 4px;
 							
 							&.red{
-								background: red;
+								background: $red;
 							}
 							
 							&.blue{
-								background: blue;
+								background: $blue;
 							}
 						}
 						
@@ -109,26 +111,57 @@
 				}
 				
 				.graph {
+					$max: 2;
 					margin: $margin 0;
 					width: 6 * $x-unit;
 					height: 2 * $y-unit;
 					
-					.yaxis {
-						$max: 2;
-						position: relative;
-						width: 6 * $x-unit;
-						border-top: 1px solid lightgray;
+					@for $i from 0 through $max {
+						.yaxis-#{$i} {
+							position: relative;
+							width: 6 * $x-unit;
+							border-top: 1px solid lightgray;
+							top: ($max - $i) * $y-unit;
+						}
+					}
+					
+					svg {
+						z-index: 1;
+						position: absolute;
+						left: 20px;
+						width: 100%;
+						height: 100%;
+						fill: none;
+						stroke-width: 2;
 						
-						@for $i from 0 through $max {
-							&.y#{$i} {
-								top: ($max - $i) * $y-unit;
+						&.points {
+							$margin: 3px;
+							top: 95px; // inherit - $margin
+							left: 20px - $margin;
+							width: (6 * $x-unit) + (2 * $margin);
+							height: (2 * $y-unit) + (2 * $margin);
+						}
+						
+						.red {
+							stroke: $red;
+							
+							&.circle {
+								fill: $red;
+							}
+						}
+						
+						.blue {
+							stroke: $blue;
+							
+							&.circle {
+								fill: $blue;
 							}
 						}
 					}
 				}
 				
 				.categories{
-					$width: 20px;
+					$width: 24px;
 					margin-left: $width / -2;
 					height: $category-height;
 					display: flex;
@@ -136,11 +169,10 @@
 					
 					p {
 						margin: 0;
-						width: $width;
-						height: 11px;
-						line-height: 11px;
+						min-width: $width;
+						line-height: $category-height - 4px;
 						font-size: 9px;
-						color: darkgray;
+						color: rgb(100, 100, 100);
 					}
 				}
 			}
