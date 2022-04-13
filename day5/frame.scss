@@ -30,7 +30,7 @@
 				0 50px 40px rgba(0, 0, 0, 0.12);
 			
 			.header {
-				height: 30px;
+				height: 40px;
 				background: black;
 				color: white;
 				display: flex;
@@ -45,6 +45,7 @@
 					font-size: 14px;
 					
 					> p {
+						margin-bottom: 6px;
 						text-align: left;
 						font-weight: bold;
 						
@@ -58,6 +59,7 @@
 					font-size: 11px;
 					
 					> p {
+						margin-bottom: 6px;
 						text-align: right;
 						
 						&.value {
@@ -94,6 +96,7 @@
 						div {
 							width: 12px;
 							height: 4px;
+							border-radius: 3px;
 							
 							&.red{
 								background: $red;
@@ -134,34 +137,83 @@
 						fill: none;
 						stroke-width: 2;
 						
-						&.points {
-							$margin: 3px;
-							top: 95px; // inherit - $margin
-							left: 20px - $margin;
-							width: (6 * $x-unit) + (2 * $margin);
-							height: (2 * $y-unit) + (2 * $margin);
-						}
-						
 						.red {
 							stroke: $red;
-							
-							&.circle {
-								fill: $red;
-							}
 						}
 						
 						.blue {
 							stroke: $blue;
-							
-							&.circle {
-								fill: $blue;
+						}
+					}
+					
+					
+					.point {
+						position: absolute;
+						width: 6px;
+						height: 6px;
+						border-radius: 50%;
+						cursor: pointer;
+
+						@for $i from 1 through 8 {
+							&:nth-child(#{$i}) {
+								left: 17px + (($i - 1) * $x-unit);
 							}
+						}
+
+						&.red, 
+						&.red > .tooltip, 
+						&.red > .tooltip:after {
+							background: $red;
+						}
+
+						&.blue, 
+						&.blue > .tooltip, 
+						&.blue > .tooltip:after {
+							background: $blue;
+						}
+
+						.tooltip {
+							opacity: 0;
+							z-index: 1;
+							position: absolute;
+							left: -11px;
+							bottom: 12px;
+							width: 21px;
+							margin: 0;
+							padding: 3px;
+							border-radius: 3px;
+							font-size: 11px;
+							font-weight: 600;
+							color: white;
+							text-align: center;
+							transform: translateY(6px);
+							transition: all .4s;
+							
+							&:after {
+								$width: 8px;
+								display: block;
+								position: absolute;
+								content: '';
+								width: $width;
+								height: $width;
+								bottom: -3px;
+								left: 10px;
+								border-radius: 2px;
+								transform: rotate(45deg);
+							}
+						}
+
+						&:hover > .tooltip {
+							opacity: 1;
+							transform: none;
 						}
 					}
 				}
 				
 				.categories{
 					$width: 24px;
+					position: absolute;
+					top: 194px;
 					margin-left: $width / -2;
 					height: $category-height;
 					display: flex;
