@@ -1,0 +1,219 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+$blue: #1a6bed;
+$darkblue: #253c9c;
+
+p {
+	margin: 0;
+}
+
+// use only the available space inside the 400x400 frame
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #333333;
+  color: #333;
+	font-family: 'Roboto', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	.center {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		
+		.notification {
+			@mixin transition {
+				transition: all .6s;
+			}
+			$b-radius: 10px;
+			width: 300px;
+			height: 300px;
+			@include transition;
+			
+			&.open {
+				transform: translateX(130px);
+			}
+			
+			.main-panel {
+				
+				.header {
+					height: 30px;
+					border-radius: $b-radius $b-radius 0 0;
+					background: $blue;
+					color: white;
+					padding: 15px;
+					display: flex;
+					place-items: center;
+					
+					.menu-icon {
+						> div {
+							width: 25px;
+							height: 3px;
+							margin-bottom: 6px;
+							border-radius: 2px;
+							background: white;
+							
+							&:first-child {
+								margin-top: 6px;
+							}
+						}
+					}
+					
+					.searchbar {
+						position: absolute;
+						left: 70px;
+						margin: 0;
+						width: 170px;
+						height: 26px;
+						border: 0;
+						border-radius: 30px;
+						transform: translateX(50px);
+						opacity: 0;
+						@include transition;
+						
+						&.visible {
+							transform: none;
+							opacity: 1;
+						}
+					}
+					
+					.search-icon {
+						:first-child {
+							position: absolute;
+							top: 19px;
+							left: 263px;
+							width: 10px;
+							height: 10px;
+							border: 3px solid white;
+							border-radius: 10px;
+						}
+						:last-child {
+							position: absolute;
+							top: 34px;
+							left: 274px;
+							width: 11px;
+							height: 3px;
+							border-radius: 2px;
+							background: white;
+							transform: rotate(45deg);
+						}
+					}
+					
+					> p {
+						margin: auto;
+						padding-right: 18px;
+					}
+				}
+				
+				.notis {
+					height: 240px;
+					border-radius: 0 0 $b-radius $b-radius;
+					background: white;
+					overflow-y: scroll;
+					display: flex;
+					flex-direction: column;
+					place-items: center;
+  				-ms-overflow-style: none;
+					scrollbar-width: none;
+					
+					&::-webkit-scrollbar {
+						display: none;
+					}
+					
+					.noti {
+						width: calc(100% - 30px);
+						height: fit-content;
+						padding: 15px;
+						display: flex;
+						place-items: center;
+						gap: 15px;
+						transition: background .1s;
+						
+						&:hover {
+							background: #d6e6ff;
+						}
+						
+						.profileIcon {
+							width: 40px;
+							height: 40px;
+							flex-shrink: 0;
+							border-radius: 50%;
+							background-size: auto 40px;
+  						background-position: center;
+						}
+						
+						.info {
+							display: flex;
+							flex-direction: column;
+							gap: 3px;
+							
+							.time {
+								font-size: 10px;
+							}
+
+							.content {
+								font-size: 13px;
+							}
+						}
+					}
+				}
+			}
+			
+			.menus {
+				$width: 130px;
+				z-index: -1;
+				position: absolute;
+				top: 30px;
+				left: 70px;
+				width: $width;
+				height: fit-content;
+				color: white;
+				@include transition;
+				display: flex;
+				flex-direction: column;
+				
+				&.open {
+					left: -$width;
+				}
+				
+				> div {
+					padding: 12px 16px;
+					background: $darkblue;
+					display: flex;
+					gap: 10px;
+					transition: background .1s;
+					
+					&:first-child {
+						padding-top: 16px;
+						border-top-left-radius: $b-radius;
+					}
+					
+					&:last-child {
+						padding-bottom: 16px;
+						border-bottom-left-radius: $b-radius;
+					}
+				
+					&:hover {
+						background: $blue;
+					}
+					
+					> p {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+}
