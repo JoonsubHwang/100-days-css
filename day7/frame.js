@@ -9,7 +9,10 @@ menuIcon.addEventListener('click', () => {
 
 let searchIcon = document.querySelector('.search-icon');
 let searchbar = document.querySelector('.searchbar');
+let title = document.querySelector('.header > p');
+
 
 searchIcon.addEventListener('click', () => {
 		searchbar.classList.toggle('visible');
+		title.classList.toggle('invisible');
 });
