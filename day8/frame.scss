@@ -19,114 +19,57 @@
 			transform: translate(-50%,-50%);
 			
 			.blob {
+        $r: 35px;
+        $orbit-max-r: 25;
 				position: absolute;
-				transform: translate(-50%, -50%);
-				width: 100px;
-				height: 100px;
-				border: 5px solid pink;
+				top: -$r;
+        left: -$r;
+				width: 2 * $r;
+				height: 2 * $r;
+				border-radius: 50px;
+				background: yellow;
+				filter: blur(15px);
+        
+        @for $i from 1 to 7 {
+          &:nth-child(#{$i}) {
+            $orbit-r: random($orbit-max-r);
+            $orbit-center: $r - $orbit-r + (2 * $orbit-r);
+            animation: orbit (1.5s + (random(10) / 2)) linear infinite;
+            transform-origin: $orbit-center $orbit-center;
+          }
+        }
+      }
+      
+      .particle {
+        $r: random(40) / 2;
+        $orbit-min-r: 50;
+        $orbit-range: 40;
+				position: absolute;
+				width: 2 * $r + px;
+				height: 2 * $r + px;
 				border-radius: 50px;
 				background: cyan;
-				filter: blur(15px);
+				filter: blur(5px);
+        
+        @for $i from 1 to 11 {
+          &:nth-child(#{$i}) {
+            $r: random(24) / 2;
+            $orbit-r: $orbit-min-r + random($orbit-range);
+            $orbit-center: $r - $orbit-r + (2 * $orbit-r) + px;
+            top: (-2 * $orbit-r) + random(2 * $orbit-r) + px;
+            left: (-2 * $orbit-r) + random(2 * $orbit-r) + px;
+            width: 2 * $r + px;
+            height: 2 * $r + px;
+            animation: orbit (2s + (random(10) / 3)) linear infinite;
+            transform-origin: $orbit-center $orbit-center;
+          }
+        }
+      }
 				
-				@for $i from 1 through 4 {
-					&:nth-child(#{$i}) {
-						animation: motion-#{$i} 6s both infinite;
-					}
-				}
-				
-				$displacement: 70px;
-				
-				@keyframes motion-1 {
-					0% {
-						top: -$displacement;
-						left: -$displacement;
-					}
-					20%, 25% {
-						top: $displacement;
-						left: -$displacement;
-					}
-					45%, 50% {
-						top: $displacement;
-						left: $displacement;
-					}
-					70%, 75% {
-						top: -$displacement;
-						left: $displacement;
-					}
-					95%, 100% {
-						top: -$displacement;
-						left: -$displacement;
-					}
-				}
-				
-				@keyframes motion-2 {
-					0% {
-						top: -$displacement;
-						left: $displacement;
-					}
-					20%, 25% {
-						top: $displacement;
-						left: $displacement;
-					}
-					45%, 50% {
-						top: $displacement;
-						left: -$displacement;
-					}
-					70%, 75% {
-						top: -$displacement;
-						left: -$displacement;
-					}
-					95%, 100% {
-						top: -$displacement;
-						left: $displacement;
-					}
-				}
-				
-				@keyframes motion-3 {
-					0% {
-						top: $displacement;
-						left: -$displacement;
-					}
-					20%, 25% {
-						top: -$displacement;
-						left: -$displacement;
-					}
-					45%, 50% {
-						top: -$displacement;
-						left: $displacement;
-					}
-					70%, 75% {
-						top: $displacement;
-						left: $displacement;
-					}
-					95%, 100% {
-						top: $displacement;
-						left: -$displacement;
-					}
-				}
-				
-				@keyframes motion-4 {
-					0% {
-						top: $displacement;
-						left: $displacement;
-					}
-					20%, 25% {
-						top: -$displacement;
-						left: $displacement;
-					}
-					45%, 50% {
-						top: -$displacement;
-						left: -$displacement;
-					}
-					70%, 75% {
-						top: $displacement;
-						left: -$displacement;
-					}
-					95%, 100% {
-						top: $displacement;
-						left: $displacement;
-					}
-				}
-			}
+      @keyframes orbit {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
 		}
 }
