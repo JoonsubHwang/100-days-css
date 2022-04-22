@@ -1,15 +1,42 @@
 .frame
   .center
-		.sun
-		.clouds
-			- for i in (1..4)
-				.cloud
-					- for j in (1..3)
-						div
-		.hills
-			/ .far
-				- for j in (1..2)
-					.hill
-			.close
-				- for j in (1..2)
-					.hill
+		.scene
+			.sun
+			.clouds
+				- for i in (1..4)
+					.cloud
+						- for j in (1..3)
+							div
+			.hills
+				.far
+					- for j in (1..2)
+						.hill
+				.close
+					- for j in (1..2)
+						.hill
+			.rain
+				.further
+					- for j in (1..10)
+						.raindrop
+				.far
+					- for j in (1..10)
+						.raindrop
+				.close
+					- for j in (1..20)
+						.raindrop
+		.info
+			p.temperature 12°
+			.details
+				div
+					p.name Wind
+					p.value E 7 km/h
+				div
+					p.name Humidity
+					p.value 87%
+			.forecasts
+				div
+					p.name Tue
+					p.value 21° / 9°
+				div
+					p.name Wed
+					p.value 23° / 10°
