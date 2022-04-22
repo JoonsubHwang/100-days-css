@@ -1,0 +1,109 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400,500,500)
+
+.frame
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 2px
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06),	0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+	overflow: hidden
+	background: linear-gradient(70deg, rgba(41,128,255,1) 0%, rgba(62,62,221,1) 50%, rgba(24,15,167,1) 100%)
+	color: #333
+	font-family: 'Open Sans', Helvetica, sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+.center
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%)
+	
+	.watch
+		$red: #f73636
+		$r: 100px
+		$circle-stroke: 4px
+		width: 2 * $r
+		height: 2 * $r
+		border: 5px solid $red
+		border-radius: 50%
+		background: black
+		padding: 7px
+	
+		&:after
+			position: fixed
+			z-index: -1
+			display: block
+			content: ''
+			top: -90px
+			left: 50px
+			width: 120px
+			height: 400px
+			background: $red
+	
+		> svg
+				position: fixed
+				width: 2 * $r
+				height: 2 * $r
+				transform: rotate(-90deg)
+
+				circle
+					$max-doffset: 625
+					cx: $r
+					cy: $r
+					r: $r - 2px
+					stroke: cyan
+					stroke-width: $circle-stroke
+					stroke-dasharray: $max-doffset
+					animation: draw 3s linear infinite
+
+					@keyframes draw
+						0% 
+							stroke-dashoffset: $max-doffset
+						100% 
+							stroke-dashoffset: 0
+
+		.info
+			position: relative
+			z-index: 1
+			top: 4px
+			left: 4px
+			width: 2 * $r - (2 * $circle-stroke)
+			height: 2 * $r - (2 * $circle-stroke)
+			border-radius: 50%
+			display: flex
+			flex-direction: column
+			place-content: center
+			place-items: center
+	
+			p
+				margin: 0
+				font-size: 12px
+				font-weight: 400
+				color: white
+		
+				&.time
+					font-size: 36px
+		
+			.other
+				display: flex
+				gap: 10px
+		
+				.heartbeat
+					display: flex
+					gap: 4px
+		
+					.icon
+						margin-left: 2px
+						width: 9px
+						fill: $red
+						stroke: $red
+						animation: heartbeat .4s infinite
+			
+						@keyframes heartbeat
+							0%
+								transform: scale(1.2)
