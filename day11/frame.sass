@@ -1,0 +1,107 @@
+.frame
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 2px
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1)
+	overflow: hidden
+	background: radial-gradient(#fce6e6 20%, #f7bebe)
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+	
+		p
+			position: fixed
+			top: -150px
+			left: -100px
+			margin: 0
+			width: max-content
+			font-size: 18px
+			animation: slide-down .4s 2s both
+	
+			@keyframes slide-down
+				0% 
+					transform: translateY(-100px)
+	
+		.ground
+			position: fixed
+			top: 100px
+			left: -200px
+			width: 400px
+			height: 100px
+			background: #555
+	
+		.legs
+			$walk-duration: 2s
+			animation: fade-in .4s ($walk-duration / 2) both
+	
+			@keyframes fade-in
+				0%
+					opacity: 0
+				100%
+					opacity: 1
+	
+			&:hover
+				.leg
+					border: 1px solid #9999ff
+					border-radius: 50%
+	
+			.leg
+				position: fixed
+				top: -110px
+				left: -50px
+				width: 50px
+				height: 200px
+				transform-origin: 25px 0px
+		
+				&:first-child
+					animation: leg-swing $walk-duration linear ($walk-duration / 2) both infinite
+		
+				&:last-child
+					animation: leg-swing $walk-duration linear both infinite
+			
+				@keyframes leg-swing
+					0%, 100%
+						transform: rotate(-20deg) translate(50px, 0px)
+					12.5%
+						transform: rotate(-15deg) translate(60px, 30px)
+					// 25%
+					// 37.5%
+					50%
+						transform: rotate(30deg) translate(20px, 10px)
+					67.5%
+						transform: rotate(30deg) translate(50px, -20px)
+					87.5%
+						transform: translate(60px, -20px)
+		
+				.boot
+					$size: 100px
+					position: relative
+					top: 160px
+					left: -5px
+					width: $size
+					height: $size
+					background: url('https://100dayscss.com/codepen/doc-martens.svg')
+					background-size: $size $size
+					animation: ankle-rotate $walk-duration linear both infinite
+					filter: hue-rotate(230deg) brightness(1.4)
+			
+				@keyframes ankle-rotate
+					12.5%
+						transform: rotate(5deg)
+					25%
+						transform: none
+					50%
+						transform: rotate(-10deg) translateX(8px)
+					67.5%
+						transform: rotate(5deg)
+					75%
+						transform: rotate(15deg) translateX(-8px)
+		
