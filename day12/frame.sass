@@ -1,0 +1,103 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400)
+
+$dark-red: #4a1716
+$light-red: #a15a57
+$white: #fffafa
+$green: #07a32a
+
+.frame
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 7px
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1)
+	background: $dark-red
+	overflow: hidden
+	font-family: 'Open Sans', Helvetica, sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+		
+		p
+			margin: 0
+			line-height: 1.7rem
+			color: $white
+		
+		.bg-icon
+			z-index: -1
+			position: absolute
+			top: 60px
+			left: -20px
+			width: 100px
+			height: 100px
+			font-size: 250px
+			font-family: arial
+			color: black
+			opacity: .5
+	
+		.quote
+			margin-bottom: 15px
+			width: 300px
+			line-height: 1.3
+			font-size: 22px
+			font-weight: 400
+			text-indent: 2ch
+	
+			.word
+				padding: 0 5px
+				border-radius: 4px
+				background: $light-red
+				transition: all .1s
+		
+				&:hover
+					background: $green
+	
+		.author
+			font-size: 18px
+			text-align: right
+			font-weight: 300
+			font-style: italic
+	
+		.tooltip
+			z-index: 2
+			position: fixed
+			top: -20px
+			border-radius: 6px
+			width: 300px
+			height: 102px
+			background: #fcfffd
+			transform: translate(-90px, 65px) scale(0)
+			transition: all .2s
+	
+			> *
+				padding: 0 10px
+	
+			.header
+				height: 30px
+				border-radius: 6px 6px 0 0
+				background: $green
+				display: flex
+		
+				p
+					color: white
+			
+				.word
+					margin-right: 5px
+					font-weight: 600
+		
+			.description
+				padding-top: 3px
+				font-size: 15px
+				line-height: 1.25
+				color: black
+		
