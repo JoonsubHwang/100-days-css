@@ -1,0 +1,160 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400)
+
+@mixin soft-shadow
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+
+.frame
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 7px
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1)
+	overflow: hidden
+	font-family: 'Open Sans', Helvetica, sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	@include soft-shadow
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+	
+		.feed
+			$width: 400px
+			$padd: 10px
+			$item-width: ($width - (3 * $padd)) / 2
+			box-sizing: border-box
+			width: $width
+			height: $width
+			padding: $padd
+			display: grid
+			grid-template-columns: $item-width $item-width
+			gap: $padd
+		
+			.pic
+				$border-r: 6px
+				width: $item-width
+				height: $item-width
+		
+				> *
+					border-radius: $border-r
+					width: $item-width
+					height: $item-width
+		
+				.preview
+					opacity: 0
+					position: absolute
+					background: rgba(0, 0, 0, .5)
+					backdrop-filter: blur(2px)
+					transition: all .4s
+					overflow: hidden
+		
+					.bg-img
+						margin-top: 100%
+						width: 100%
+						height: 50%
+						border-radius: 0 0 $border-r $border-r
+						transition: all .4s
+			
+					.prof-img
+						z-index: 1
+						position: absolute
+						margin-top: 40%
+						top: 60%
+						left: 35%
+						width: 30%
+						height: 30%
+						border-radius: 15%
+						@include soft-shadow
+						transition: all .4s .1s
+			
+					.name
+						opacity: 0
+						margin: 0 auto 20px
+						width: fit-content
+						font-size: 18px
+						transition: all .4s .6s
+			
+					.buttons
+						width: 100%
+						display: flex
+						gap: 50px
+						place-content: center
+			
+						i 
+							margin-top: 125px
+							$width: 40px
+							width: $width
+							height: $width
+							padding: 12px
+							border-radius: 10px
+							line-height: $width
+							font-size: 26px
+							text-align: center
+							transition: all .4s .6s, color .1s
+			
+							&.fa-comment
+								line-height: $width - 7px
+			
+							&:hover
+				
+								&.fa-phone
+									color: #2363eb
+				
+								&.fa-comment
+									color: #24c94b
+				
+								&.fa-heart
+									color: #eb3f3f
+			
+					&.more
+						opacity: 1
+						position: absolute
+						z-index: 1
+						top: 10px !important
+						left: 10px !important
+						background: white
+						backdrop-filter: blur(2px)
+						width: 380px
+						height: 380px
+						transition: all .4s, background .1s .4s
+		
+						.bg-img
+							margin-top: 0
+							border-radius: $border-r $border-r 0 0
+						
+						.prof-img
+							margin-top: -25%
+							margin-left: 0%
+							width: 30%
+							height: 30%
+			
+						.name
+							opacity: 1
+							margin-top: 75px
+			
+						.buttons
+							i
+								margin-top: 0
+			
+				&:hover
+					.preview
+						opacity: 1
+				
+					.bg-img
+						margin-top: 50%
+						
+					.prof-img
+						margin-top: 0
+		
+				@for $i from 1 through 4
+					&:nth-child(#{$i})
+						.preview
+							top: $padd + ($item-width + $padd) * (floor(($i / 2) - .5))
+
