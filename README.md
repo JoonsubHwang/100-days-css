@@ -9,19 +9,9 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 
 ## Table of Contents
-1. [Day 1](#Day-1) 
-2. [Day 2](#Day-2)
-3. [Day 3](#Day-3)
-4. [Day 4](#Day-4)
-1. [Day 5](#Day-5) 
-2. [Day 6](#Day-6)
-3. [Day 7](#Day-7)
-4. [Day 8](#Day-8)
-1. [Day 9](#Day-9) 
-2. [Day 10](#Day-10)
-3. [Day 11](#Day-11)
-4. [Day 12](#Day-12)
-4. [Day 13](#Day-13)
+[Day &nbsp;&nbsp;1](#day-1) &nbsp;&nbsp; [Day &nbsp;&nbsp;2](#day-2) &nbsp;&nbsp; [Day &nbsp;&nbsp;3](#day-3) &nbsp;&nbsp; [Day &nbsp;&nbsp;4](#day-4) &nbsp;&nbsp; [Day &nbsp;&nbsp;5](#day-5) &nbsp;&nbsp; [Day &nbsp;&nbsp;6](#day-6) &nbsp;&nbsp; [Day &nbsp;&nbsp;7](#day-7) &nbsp;&nbsp; [Day &nbsp;&nbsp;8](#day-8) &nbsp;&nbsp; [Day &nbsp;&nbsp;9](#day-9) &nbsp;&nbsp; [Day 10](#day-10) 
+
+[Day 11](#day-11) &nbsp;&nbsp; [Day 12](#day-12) &nbsp;&nbsp; [Day 13](#day-13)
 
 <br/><br/>
 
@@ -29,7 +19,9 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 ### Day 1
 
-[CodePen](https://codepen.io/joonsubhwang/pen/yLpXdOg)
+![Preview](https://i.gyazo.com/ed0bb2d92c164eb41fdad87198e6df49.png)
+
+Source code: [CodePen](https://codepen.io/joonsubhwang/pen/yLpXdOg)
 
 <br/><br/>
 
@@ -37,7 +29,9 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 ### Day 2
 
-[CodePen](https://codepen.io/joonsubhwang/pen/yLpzzNG)
+![Preview](https://i.gyazo.com/70cb33fcd17523ac279e8d4976b6f7e5.gif)
+
+Source code: [CodePen](https://codepen.io/joonsubhwang/pen/yLpzzNG)
 
 <br/><br/>
 
@@ -46,7 +40,9 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 ### Day 3
 
-[CodePen](https://codepen.io/joonsubhwang/pen/QWaOjMW)
+![Preview](https://i.gyazo.com/4823b550cc57cb3c5138861bc9eab6c4.gif)
+
+Source code: [CodePen](https://codepen.io/joonsubhwang/pen/QWaOjMW)
 
 <br/><br/>
 
@@ -55,7 +51,9 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 ### Day 4
 
-[CodePen](https://codepen.io/joonsubhwang/pen/xxpjxOo)
+![Preview](https://i.gyazo.com/d6b6276c79524fb2490c183a7022767f.gif)
+
+Source code: [CodePen](https://codepen.io/joonsubhwang/pen/xxpjxOo)
 
 <br/><br/>
 
@@ -63,7 +61,9 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 ### Day 5
 
-[CodePen](https://codepen.io/joonsubhwang/pen/vYpjVrw)
+![Preview](https://i.gyazo.com/02e42d74c697dd6d6bb4c354bd0be987.gif)
+
+Source code: [CodePen](https://codepen.io/joonsubhwang/pen/vYpjVrw)
 
 <br/><br/>
 
@@ -71,7 +71,9 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 ### Day 6
 
-[CodePen](https://codepen.io/joonsubhwang/pen/XWVPQmP)
+![Preview](https://i.gyazo.com/3aaa1b25c96fa1c47ccfbe51ee1f29f7.gif)
+
+Source code: [CodePen](https://codepen.io/joonsubhwang/pen/XWVPQmP)
 
 <br/><br/>
 
@@ -80,7 +82,9 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 ### Day 7
 
-[CodePen](https://codepen.io/joonsubhwang/pen/zYpMKvW)
+![Preview]()
+
+Source code: [CodePen](https://codepen.io/joonsubhwang/pen/zYpMKvW)
 
 <br/><br/>
 
@@ -89,7 +93,9 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 ### Day 8
 
-[CodePen](https://codepen.io/joonsubhwang/pen/QWaYObB)
+![Preview]()
+
+Source code: [CodePen](https://codepen.io/joonsubhwang/pen/QWaYObB)
 
 <br/><br/>
 
@@ -97,7 +103,9 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 ### Day 9
 
-[CodePen](https://codepen.io/joonsubhwang/pen/RwxdWXM)
+![Preview]()
+
+Source code: [CodePen](https://codepen.io/joonsubhwang/pen/RwxdWXM)
 
 <br/><br/>
 
@@ -105,7 +113,9 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 ### Day 10
 
-[CodePen](https://codepen.io/joonsubhwang/pen/ExoJXEq)
+![Preview]()
+
+Source code: [CodePen](https://codepen.io/joonsubhwang/pen/ExoJXEq)
 
 <br/><br/>
 
@@ -114,7 +124,9 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 ### Day 11
 
-[CodePen](https://codepen.io/joonsubhwang/pen/gOoNPde)
+![Preview]()
+
+Source code: [CodePen](https://codepen.io/joonsubhwang/pen/gOoNPde)
 
 <br/><br/>
 
@@ -123,7 +135,9 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 ### Day 12
 
-[CodePen](https://codepen.io/joonsubhwang/pen/eYywxXv)
+![Preview]()
+
+Source code: [CodePen](https://codepen.io/joonsubhwang/pen/eYywxXv)
 
 <br/><br/>
 
@@ -132,7 +146,9 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 ### Day 13
 
-[CodePen](https://codepen.io/joonsubhwang/pen/vYpowxe)
+![Preview](https://i.gyazo.com/4823b550cc57cb3c5138861bc9eab6c4.gif)
+
+Source code: [CodePen](https://codepen.io/joonsubhwang/pen/vYpowxe)
 
 <br/><br/>
 
