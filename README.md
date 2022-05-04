@@ -19,7 +19,7 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 
 ### Day 1
 
-![Preview](https://i.gyazo.com/ed0bb2d92c164eb41fdad87198e6df49.png)
+![Preview](https://i.gyazo.com/370d3173206673dcab8556dd335d0c4f.jpg)
 
 Source code: [CodePen](https://codepen.io/joonsubhwang/pen/yLpXdOg)
 
@@ -29,7 +29,7 @@ Source code: [CodePen](https://codepen.io/joonsubhwang/pen/yLpXdOg)
 
 ### Day 2
 
-![Preview](https://i.gyazo.com/70cb33fcd17523ac279e8d4976b6f7e5.gif)
+![Preview](https://i.gyazo.com/1c0efee4200cdc774ab0a4b2f0e2a668.gif)
 
 Source code: [CodePen](https://codepen.io/joonsubhwang/pen/yLpzzNG)
 
@@ -40,7 +40,7 @@ Source code: [CodePen](https://codepen.io/joonsubhwang/pen/yLpzzNG)
 
 ### Day 3
 
-![Preview](https://i.gyazo.com/4823b550cc57cb3c5138861bc9eab6c4.gif)
+![Preview](https://i.gyazo.com/3719afd32a3b90d2ba646725b819bf5c.gif)
 
 Source code: [CodePen](https://codepen.io/joonsubhwang/pen/QWaOjMW)
 
@@ -51,7 +51,7 @@ Source code: [CodePen](https://codepen.io/joonsubhwang/pen/QWaOjMW)
 
 ### Day 4
 
-![Preview](https://i.gyazo.com/d6b6276c79524fb2490c183a7022767f.gif)
+![Preview](https://i.gyazo.com/d7200352fd6494be4445047e08c126ad.gif)
 
 Source code: [CodePen](https://codepen.io/joonsubhwang/pen/xxpjxOo)
 
@@ -61,7 +61,7 @@ Source code: [CodePen](https://codepen.io/joonsubhwang/pen/xxpjxOo)
 
 ### Day 5
 
-![Preview](https://i.gyazo.com/02e42d74c697dd6d6bb4c354bd0be987.gif)
+![Preview](https://i.gyazo.com/5d88924f35b78b750448ec064cb32bac.gif)
 
 Source code: [CodePen](https://codepen.io/joonsubhwang/pen/vYpjVrw)
 
@@ -82,7 +82,7 @@ Source code: [CodePen](https://codepen.io/joonsubhwang/pen/XWVPQmP)
 
 ### Day 7
 
-![Preview]()
+![Preview](https://i.gyazo.com/4cc0354e7d8d9caf7409132acf06ad6b.gif)
 
 Source code: [CodePen](https://codepen.io/joonsubhwang/pen/zYpMKvW)
 
@@ -93,7 +93,7 @@ Source code: [CodePen](https://codepen.io/joonsubhwang/pen/zYpMKvW)
 
 ### Day 8
 
-![Preview]()
+![Preview](https://i.gyazo.com/67dc7fee29f67b81223c949611f657f5.gif)
 
 Source code: [CodePen](https://codepen.io/joonsubhwang/pen/QWaYObB)
 
@@ -103,7 +103,7 @@ Source code: [CodePen](https://codepen.io/joonsubhwang/pen/QWaYObB)
 
 ### Day 9
 
-![Preview]()
+![Preview](https://i.gyazo.com/e37752aac02e24e2f04a0c82ee5f84ad.gif)
 
 Source code: [CodePen](https://codepen.io/joonsubhwang/pen/RwxdWXM)
 
@@ -113,7 +113,7 @@ Source code: [CodePen](https://codepen.io/joonsubhwang/pen/RwxdWXM)
 
 ### Day 10
 
-![Preview]()
+![Preview](https://i.gyazo.com/bfae360603cb675d94b903e3f27de7c3.gif)
 
 Source code: [CodePen](https://codepen.io/joonsubhwang/pen/ExoJXEq)
 
@@ -124,7 +124,7 @@ Source code: [CodePen](https://codepen.io/joonsubhwang/pen/ExoJXEq)
 
 ### Day 11
 
-![Preview]()
+![Preview](https://i.gyazo.com/6df22a5002dd7eee57d4b8f869b2d291.gif)
 
 Source code: [CodePen](https://codepen.io/joonsubhwang/pen/gOoNPde)
 
@@ -135,7 +135,7 @@ Source code: [CodePen](https://codepen.io/joonsubhwang/pen/gOoNPde)
 
 ### Day 12
 
-![Preview]()
+![Preview](https://i.gyazo.com/e927315002137349a512ebbdde854f6d.gif)
 
 Source code: [CodePen](https://codepen.io/joonsubhwang/pen/eYywxXv)
 
@@ -146,7 +146,7 @@ Source code: [CodePen](https://codepen.io/joonsubhwang/pen/eYywxXv)
 
 ### Day 13
 
-![Preview](https://i.gyazo.com/4823b550cc57cb3c5138861bc9eab6c4.gif)
+![Preview](https://i.gyazo.com/2d852f7955598b15be316a18904073aa.gif)
 
 Source code: [CodePen](https://codepen.io/joonsubhwang/pen/vYpowxe)
 
