@@ -11,7 +11,7 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 ## Table of Contents
 [Day &nbsp;&nbsp;1](#day-1) &nbsp;&nbsp; [Day &nbsp;&nbsp;2](#day-2) &nbsp;&nbsp; [Day &nbsp;&nbsp;3](#day-3) &nbsp;&nbsp; [Day &nbsp;&nbsp;4](#day-4) &nbsp;&nbsp; [Day &nbsp;&nbsp;5](#day-5) &nbsp;&nbsp; [Day &nbsp;&nbsp;6](#day-6) &nbsp;&nbsp; [Day &nbsp;&nbsp;7](#day-7) &nbsp;&nbsp; [Day &nbsp;&nbsp;8](#day-8) &nbsp;&nbsp; [Day &nbsp;&nbsp;9](#day-9) &nbsp;&nbsp; [Day 10](#day-10) 
 
-[Day 11](#day-11) &nbsp;&nbsp; [Day 12](#day-12) &nbsp;&nbsp; [Day 13](#day-13)
+[Day 11](#day-11) &nbsp;&nbsp; [Day 12](#day-12) &nbsp;&nbsp; [Day 13](#day-13) &nbsp;&nbsp; [Day 14](#day-14)
 
 <br/><br/>
 
@@ -149,6 +149,17 @@ Source code: [CodePen](https://codepen.io/joonsubhwang/pen/eYywxXv)
 ![Preview](https://i.gyazo.com/2d852f7955598b15be316a18904073aa.gif)
 
 Source code: [CodePen](https://codepen.io/joonsubhwang/pen/vYpowxe)
+
+<br/><br/>
+
+
+
+
+### Day 14
+
+![Preview](https://i.gyazo.com/a30c9e406b7983e82bed1b42afdc0f08.gif)
+
+Source code: [CodePen](https://codepen.io/joonsubhwang/pen/RwxdWXM)
 
 <br/><br/>
 
