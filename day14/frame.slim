@@ -3,8 +3,14 @@
 		p Hover Me!
 		.card
 			.front
-				.anim
-					img src='https://100dayscss.com/codepen/helicopter.svg'
-			.back
-				.anim
+				.anim.bike
 					img src='https://100dayscss.com/codepen/bycicle.svg'
+					.lines
+						- for i in (1..7)
+							div
+			.back
+				.anim.heli
+					img src='https://100dayscss.com/codepen/helicopter.svg'
+					.lines
+						- for i in (1..7)
+							div
