@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400)
 
+$grey: #4B4841
+
 @mixin soft-shadow
 	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
 
@@ -14,7 +16,7 @@
 	margin-left: -200px
 	border-radius: 7px
 	overflow: hidden
-	background: #4B4841
+	background: $grey
 	font-family: 'Open Sans', Helvetica, sans-serif
 	-webkit-font-smoothing: antialiased
 	-moz-osx-font-smoothing: grayscale
@@ -31,8 +33,8 @@
 			width: 100%
 			text-align: center
 			font-size: 24px
-			font-weight: 300px
-			color: white
+			font-weight: 300
+			color: #FFCE4E
 	
 		.card
 			width: 300px
@@ -63,37 +65,79 @@
 					place-content: center
 			
 					img
-						width: 131px
-	
-			.front
-				background: #FFCE4E
-		
-				.anim
-					img
-						animation: fly 4s ease-in-out both infinite
+						z-index: 1
+						width: 130px
 			
-						@keyframes fly
-							0%, 100%
-								transform: rotateZ(15deg) translate(4px, 10px)
-							50%
-								transform: rotateZ(15deg) translate(-6px, -15px)
+					.lines
+						position: relative
+						
+						div
+							position: absolute
+							height: 4px
+							background: $grey
+							border-radius: 2px
+				
+			.front
+				background: #408cff
 		
 			.back
 				top: -100%
-				background: #408cff
+				background: #FFCE4E
 				transform: rotateX(-180deg)
 		
-				.anim
-					img
-						animation: ride 2s ease-in-out both infinite
+			.bike
+		
+				img
+					animation: ride 2s ease-in-out both infinite
 						
-						@keyframes ride
-							0%, 20%, 40%, 100%
-								transform: none
-							10%
-								transform: translateY(-1px)
-							30%
-								transform: translateY(-3px)
+					@keyframes ride
+						0%, 20%, 40%, 100%
+							transform: none
+						10%
+							transform: translateY(-1px)
+						30%
+							transform: translateY(-3px)
+			
+				.lines
+		
+					div
+						top: 112px
+						left: 34px
+			
+						@for $i from 1 to 7
+							&:nth-child(#{$i})
+								width: 5 + random(60) + px
+								animation: road 1s ((random(10) / 5) + s) linear infinite
+			
+							@keyframes road
+								100%
+									transform: translateX(-300px)
+		
+			.heli
+		
+				img
+					animation: fly 4s ease-in-out both infinite
+			
+					@keyframes fly
+						0%, 100%
+							transform: rotateZ(15deg) translate(4px, 10px)
+						50%
+							transform: rotateZ(15deg) translate(-6px, -15px)
+			
+				.lines
+		
+					div
+						left: 34px
+			
+						@for $i from 1 to 7
+							&:nth-child(#{$i})
+								top: 12 + random(100) + px
+								width: 10 + (random(100)/2) + px
+								animation: air .5s ((random(10) / 5) + s) linear infinite
+			
+							@keyframes air
+								100%
+									transform: translateX(-300px)
 			
 			&:hover
 				.front
