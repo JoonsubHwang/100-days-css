@@ -1,0 +1,111 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400)
+
+$blue: #2252f0
+$green: #24f034
+
+@mixin soft-shadow
+	box-shadow: 2px 8px 16px 0 rgba(0,0,0,0.2)
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+
+p
+	margin: 0
+
+button
+	background: none
+
+.frame
+	@include soft-shadow
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 7px
+	overflow: hidden
+	font-family: 'Open Sans', Helvetica, sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+	
+		.upload-div
+			@include soft-shadow
+			border-radius: 7px
+			background: white
+			display: flex
+			flex-direction: column
+			place-content: center
+			place-items: center
+	
+			.drop-area
+				width: 150px
+				height: 150px
+				border-radius: 5px
+				background: #eee
+				display: flex
+				flex-direction: column
+				place-items: center
+				place-content: center
+				gap: 20px
+		
+				p
+					z-index: 1
+					width: 60%
+					font-size: 14px
+					text-align: center
+					color: #111
+					transition: all .1s
+				
+					&.filled
+						font-size: 16px
+						color: $blue
+		
+				img
+					z-index: 1
+					filter: brightness(.3)
+		
+					&.uploaded
+						filter: brightness(100)
+		
+				input
+					opacity: 0
+					position: absolute
+					top: 0
+					width: 100%
+					height: calc(100% - 40px)
+		
+				.gauge
+					position: absolute
+					top: 0
+					width: 100%
+					height: calc(100% - 40px)
+					border-radius: 7px 7px 0 0
+					background: $green
+					transform: scaleY(0)
+					transform-origin: 50% 100%
+					
+					&.fill
+						animation: fill 1s both
+			
+						@keyframes fill
+							100%
+								transform: scaleY(1)
+		
+			.upload-btn
+				width: 100%
+				height: 40px
+				border: none
+				border-radius: 0 0 5px 5px
+				background: $blue
+				color: white
+				filter: saturate(.2)
+				transition: all .1s
+		
+				&.active	
+					filter: none
