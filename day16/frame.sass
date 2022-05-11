@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400)
+
+@mixin soft-shadow
+	box-shadow: 2px 8px 16px 0 rgba(0,0,0,0.2)
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+
+.frame
+	@include soft-shadow
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 7px
+	overflow: hidden
+	background: #9f5afd
+	font-family: 'Open Sans', Helvetica, sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+	
+		svg
+			$anim-setting: 5s both infinite
+			position: absolute
+			top: -150px
+			left: -150px
+			width: 300px
+			height: 300px
+			fill: #ffcc4d
+	
+			&.circle
+				animation: circle $anim-setting
+		
+				@keyframes circle
+					0%
+						transform: translateX(-250px)
+					78%
+						transform: scale(1.2)
+					20%, 80%, 85%
+						transform: none
+					30%, 70%
+						transform: scale(0)
+					100%
+						transform: translateX(250px)
+		
+			&.octagon
+				animation: octagon $anim-setting
+		
+				@keyframes octagon
+					0%, 30%, 50%, 100%
+						transform: scale(0)
+					38%
+						transform: scale(1.2)
+					40%, 45%
+						transform: none
+		
+			&.triangle
+				animation: triangle $anim-setting
+		
+				@keyframes triangle
+					0%, 50%, 70%, 100%
+						transform: scale(0)
+					58%
+						transform: scale(1.2)
+					60%, 65%
+						transform: none
