@@ -1,0 +1,16 @@
+.frame
+	.center
+		svg.circle
+			circle cx='50%' cy='50%' r=50
+		svg.ring stroke-width=6
+			circle cx='50%' cy='50%' r=100
+		svg.octagon
+			polygon points='196.2,169.1 169.1,196.2 130.9,196.2 103.8,169.1 103.8,130.9 130.9,103.8 169.1,103.8 196.2,130.2'
+		svg.eight-lines stroke-width=6
+				- for i in (1..8)
+					line x1=150 y1=20 x2=150 y2=40
+		svg.triangle
+				polygon points='150,95 100,175 200,175'
+		svg.three-lines stroke-width=6
+				- for i in (1..3)
+					line x1=150 y1=20 x2=150 y2=40
