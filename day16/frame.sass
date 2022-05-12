@@ -27,6 +27,7 @@
 		transform: translate(-50%,-50%)
 	
 		svg
+			$shapes: circle, ring, octagon, eight-lines, triangle, three-lines
 			$anim-setting: 5s both infinite
 			position: absolute
 			top: -150px
@@ -34,40 +35,98 @@
 			width: 300px
 			height: 300px
 			fill: #ffcc4d
+			stroke: #ffcc4d
 	
-			&.circle
-				animation: circle $anim-setting
+			&.ring
+				fill: none
 		
-				@keyframes circle
-					0%
-						transform: translateX(-250px)
-					78%
-						transform: scale(1.2)
-					20%, 80%, 85%
-						transform: none
-					30%, 70%
+			@each $shape in $shapes
+				&.#{$shape}
+					animation: $shape $anim-setting
+	
+		
+			@keyframes circle
+				0%
+					transform: translateX(-250px)
+				10%
+					transform: translateX(60px)
+				20%, 80%, 85%
+					transform: none
+				30%, 70%
+					transform: scale(0)
+				75%
+					transform: scale(1.3)
+				90%
+					transform: translateX(-30px)
+				100%
+					transform: translateX(250px)
+		
+			@keyframes ring
+				0%, 86%, 100%
+					opacity: 0
+					transform: scale(0)
+				70%
+					opacity: 1
+					transform: scale(0)
+				80%
+					opacity: 1
+				85%
+					transform: scale(1)
+		
+			@keyframes octagon
+				0%, 30%, 50%, 100%
+					transform: scale(0)
+				35%
+					transform: scale(1.3)
+				40%, 45%
+					transform: none
+	
+			&.eight-lines
+		
+				line
+					transform-origin: center 50%
+		
+					@for $i from 1 through 8
+						&:nth-child(#{$i})
+							transform: rotate(22.5 + 45 * ($i - 1) + deg)
+		
+				@keyframes eight-lines
+					0%, 46%, 100%
+						opacity: 0
 						transform: scale(0)
-					100%
-						transform: translateX(250px)
-		
-			&.octagon
-				animation: octagon $anim-setting
-		
-				@keyframes octagon
-					0%, 30%, 50%, 100%
+					30%
+						opacity: 1
 						transform: scale(0)
-					38%
-						transform: scale(1.2)
-					40%, 45%
-						transform: none
+					40%
+						opacity: 1
+					45%
+						transform: scale(1)
 		
-			&.triangle
-				animation: triangle $anim-setting
+			@keyframes triangle
+				0%, 50%, 70%, 100%
+					transform: scale(0)
+				55%
+					transform: scale(1.3)
+				60%, 65%
+					transform: none
+	
+			&.three-lines
 		
-				@keyframes triangle
-					0%, 50%, 70%, 100%
+				line
+					transform-origin: center 50%
+		
+					@for $i from 1 through 3
+						&:nth-child(#{$i})
+							transform: rotate(120 * ($i - 1) + deg)
+		
+				@keyframes three-lines
+					0%, 66%, 100%
+						opacity: 0
 						transform: scale(0)
-					58%
-						transform: scale(1.2)
-					60%, 65%
-						transform: none
+					50%
+						opacity: 1
+						transform: scale(0)
+					60%
+						opacity: 1
+					65%
+						transform: scale(1)
