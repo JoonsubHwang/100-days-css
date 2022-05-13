@@ -1,0 +1,68 @@
+@use 'sass:math'
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400)
+
+@mixin soft-shadow
+	box-shadow: 2px 8px 16px 0 rgba(0,0,0,0.2)
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+
+.frame
+	@include soft-shadow
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 7px
+	overflow: hidden
+	font-family: 'Open Sans', Helvetica, sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+	
+		.bottom
+			position: absolute
+			top: 0
+			left: -200px
+			width: 400px
+			height: 200px
+			background: black
+	
+		.disk
+			transform-style: preserve-3d
+			animation: spin 5s infinite
+		
+			@keyframes spin
+				$max-ang: 80
+				10%
+					transform: rotateX($max-ang + deg)
+				@for $i from 1 through 20
+					#{10% + (5 * $i)}
+						$angle: $max-ang * math.pow(0.7, $i) + deg
+						@if ($i % 2 == 1)
+							$angle: -$angle
+						transform: rotateX($angle)
+	
+			.front,
+			.back
+				position: absolute
+				backface-visibility: hidden
+				top: -150px
+				left: -210px
+				width: 420px
+				height: 300px
+				border-radius: 50%
+		
+			.front
+				background: white
+				transform: rotateX(-90deg)
+		
+			.back
+				background: black
+				transform: rotateX(90deg)
