@@ -1,0 +1,89 @@
+@mixin soft-shadow
+	box-shadow: 2px 8px 16px 0 rgba(0,0,0,0.2)
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+
+.frame
+	@include soft-shadow
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 50%
+	overflow: hidden
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+	
+		.radios
+			$bg-width: 400px
+			$width: 50px
+			$border-w: 3px
+			$gap: 10px
+			$margin: 4px
+			$left: ($width + (2* $border-w)) / -2
+			$translateX: $width + $gap + $border-w + $border-w
+			position: absolute
+			display: flex
+			gap: $gap
+	
+			.background
+				position: absolute
+				top: -200px
+				left: -600px
+				width: $bg-width			
+				height: $bg-width
+				border-width: 0 $bg-width
+				border-style: solid
+				background: #ffdb26
+				border-left-color: red			
+				border-right-color: green
+				transition: all .4s
+
+			#color-1:checked ~ .background
+				transform: translateX($bg-width)
+
+			#color-3:checked ~ .background
+				transform: translateX(-$bg-width)
+	
+			label
+				z-index: 1
+				position: absolute
+				top: ($width + (2* $border-w)) / -2
+				width: $width				
+				height: $width
+				border: $border-w solid white
+				border-radius: 50%
+		
+				&:nth-of-type(1)
+					left: $left - $gap - $width - (2 * $border-w)
+		
+				&:nth-of-type(2)
+					left: $left
+		
+				&:nth-of-type(3)
+					left: $left + $gap + $width + (2 * $border-w)
+		
+			input
+				display: none
+		
+			.indicator
+				position: absolute
+				top: $left + $border-w + $margin
+				left: $left + $border-w + $margin
+				width: $width - (2 * $margin)
+				height: $width - (2 * $margin)
+				background: white
+				border-radius: 50%
+				transition: all .4s
+
+			#color-1:checked ~ .indicator
+				transform: translateX(-$translateX)
+
+			#color-3:checked ~ .indicator
+				transform: translateX($translateX)
