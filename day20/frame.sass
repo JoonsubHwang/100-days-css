@@ -1,0 +1,156 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400)
+
+$send-dur: 4s
+$mint: #1ff28c
+$navy: #001a33
+
+@mixin soft-shadow
+	box-shadow: 2px 8px 16px 0 rgba(0,0,0,0.2)
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+
+.frame
+	@include soft-shadow
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 7px
+	background: $navy
+	overflow: hidden
+	font-family: 'Open Sans', Helvetica, sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+	
+		.flex
+			display: flex
+			flex-direction: column
+			place-content: center
+			place-items: center
+			gap: 40px
+	
+			.ring,
+			.circle
+				width: 200px				
+				height: 200px
+				border-radius: 50%
+
+			.ring
+				position: absolute
+				top: -2px
+				border: 4px solid $mint
+				border-width: 0
+		
+				&.send
+					animation: ring-shrink $send-dur 
+			
+					@keyframes ring-shrink
+						5%
+							border-width: 4px
+							transform: scale(1.3)
+						30%, 90%
+							border-width: 0
+							transform: scale(0)
+
+			.circle
+				background: #1b3b5c
+				display: flex
+				place-content: center
+				place-items: center
+				transition: all .1s
+		
+				&.send
+					animation: shrink $send-dur 
+			
+					@keyframes shrink
+						5%
+							transform: scale(1.1)
+						20%, 90%
+							transform: scale(0)
+
+			svg	
+				position: absolute
+				width: 120px
+				fill: none
+				stroke-width: 2px
+				stroke-dasharray: 325 325
+			
+				&.letter
+					top: 70px
+					left: 40px
+					height: 70px
+					stroke: white
+					stroke-dashoffset: 0
+					transition: all .5s
+		
+					&.send
+						stroke-dashoffset: 325
+						transition: all 1.5s
+				
+				&.plane	
+					z-index: -1
+					top: 50px
+					left: 35px
+					height: 110px
+					stroke: $mint
+					stroke-dashoffset: 325
+					transition: all 1s
+			
+					&.send
+						display: inherit
+						stroke-dashoffset: 0
+						animation: plane-fly 1.5s 1s
+			
+						@keyframes plane-fly
+							20%
+								transform: translate(-20px, 20px)
+							100%
+								opacity: 0
+								transform: translate(100px, -100px)
+						
+			
+			.button
+				width: 170px
+				height: 32px
+				border-radius: 100px
+				padding-top: 5px
+				background: white
+				color: $navy
+				text-align: center
+				font-weight: 400
+		
+				&:hover
+					background: $mint
+		
+				&.send 			
+					overflow: hidden
+					animation: button-send $send-dur
+		
+					@keyframes button-send 
+						0%
+							background: $mint
+							color: $mint
+						10% 	
+							width: 200px
+						20%	
+							width: 37px
+							border-radius: 10px
+							transform: none
+						60%
+							width: 37px
+							border-radius: 10px
+							transform: rotate(180deg)
+						85%, 90%
+							width: 0
+							height: 0
+							background: $mint
+							color: $mint
+							transform: scale(0)
