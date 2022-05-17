@@ -11,7 +11,7 @@ All of my solutions for the challenges are demonstrated on [100dayscss.com/progr
 ## Table of Contents
 [Day &nbsp;&nbsp;1](#day-1) &nbsp;&nbsp; [Day &nbsp;&nbsp;2](#day-2) &nbsp;&nbsp; [Day &nbsp;&nbsp;3](#day-3) &nbsp;&nbsp; [Day &nbsp;&nbsp;4](#day-4) &nbsp;&nbsp; [Day &nbsp;&nbsp;5](#day-5) &nbsp;&nbsp; [Day &nbsp;&nbsp;6](#day-6) &nbsp;&nbsp; [Day &nbsp;&nbsp;7](#day-7) &nbsp;&nbsp; [Day &nbsp;&nbsp;8](#day-8) &nbsp;&nbsp; [Day &nbsp;&nbsp;9](#day-9) &nbsp;&nbsp; [Day 10](#day-10) 
 
-[Day 11](#day-11) &nbsp;&nbsp; [Day 12](#day-12) &nbsp;&nbsp; [Day 13](#day-13) &nbsp;&nbsp; [Day 14](#day-14) &nbsp;&nbsp; [Day 15](#day-15) &nbsp;&nbsp; [Day 16](#day-16) &nbsp;&nbsp; [Day 17](#day-17) &nbsp;&nbsp; [Day 18](#day-18) &nbsp;&nbsp; [Day 19](#day-19)
+[Day 11](#day-11) &nbsp;&nbsp; [Day 12](#day-12) &nbsp;&nbsp; [Day 13](#day-13) &nbsp;&nbsp; [Day 14](#day-14) &nbsp;&nbsp; [Day 15](#day-15) &nbsp;&nbsp; [Day 16](#day-16) &nbsp;&nbsp; [Day 17](#day-17) &nbsp;&nbsp; [Day 18](#day-18) &nbsp;&nbsp; [Day 19](#day-19) &nbsp;&nbsp; [Day 20](#day-20)
 
 <br/><br/>
 
@@ -215,6 +215,17 @@ Source code: [CodePen](https://codepen.io/joonsubhwang/pen/WNMoRBo)
 ![Preview](https://i.gyazo.com/c4d6f857c7a1fe67777c1bb39cbc61c7.gif)
 
 Source code: [CodePen](https://codepen.io/joonsubhwang/pen/GRQrwGP)
+
+<br/><br/>
+
+
+
+
+### Day 20
+
+![Preview](https://i.gyazo.com/61a67ecb97d7166a4f179a320cadc79f.gif)
+
+Source code: [CodePen](https://codepen.io/joonsubhwang/pen/mdXWMrY)
 
 <br/><br/>
 
