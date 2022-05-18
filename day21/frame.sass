@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400)
+
+@mixin soft-shadow
+	box-shadow: 2px 8px 16px 0 rgba(0,0,0,0.2)
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+
+.frame
+	@include soft-shadow
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 7px
+	background: black
+	overflow: hidden
+	font-family: 'Open Sans', Helvetica, sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+	
+		.wall
+			outline: 2px solid blue
+			outline-offset: 8px
+			border: 2px solid blue
+			width: 400px			
+			height: 100px
+	
+		.pacman
+			$r: 40
+			$pi: 3.1415
+			z-index: 1
+			position: absolute
+			top: 13px
+			left: 162px
+			width: 2 * $r + px
+			height: 2 * $r + px
+			fill: none
+	
+			.head
+				stroke: yellow
+				stroke-width: $r + px
+				stroke-dasharray: $r * $pi
+				stroke-dashoffset: $r * $pi / 5
+				transform: rotate(36deg)
+				transform-origin: 40px 40px
+				animation: yumyum .5s infinite
+
+				@keyframes yumyum
+					50%
+						stroke-dashoffset: $r * $pi / 36
+						transform: rotate(5deg)
+		
+			.eye
+				fill: black
+				transform-origin: -5px 80px
+				animation: eye .5s infinite
+
+				@keyframes eye
+					50%
+						stroke-dashoffset: $r * $pi / 36
+						transform: rotate(5deg)
+		
+		.dots
+			position: absolute
+			top: 46px
+			left: 202px
+			height: 14px
+			stroke: #e69885
+			stroke-width: 14px
+			stroke-dasharray: 0 50
+			stroke-linecap: round
+			stroke-dashoffset: 14
+			animation: move .5s linear infinite
+	
+			@keyframes move
+				100%
+					stroke-dashoffset: 64
