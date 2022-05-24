@@ -1,0 +1,178 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400)
+
+@mixin soft-shadow
+	box-shadow: 2px 8px 16px 0 rgba(0,0,0,0.2)
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+
+.frame
+	@include soft-shadow
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 7px
+	overflow: hidden
+	background: linear-gradient(140deg, rgba(41,128,255,1) 0%, rgba(181,62,221,1) 30%, rgba(24,15,167,1) 100%)
+	font-family: 'Open Sans', Helvetica, sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+	
+		> p
+			margin: 0 auto
+			display: block
+			width: fit-content
+			line-height: 1em
+			font-size: 28px
+			font-weight: 300
+			color: white
+
+			&.bold
+				margin-bottom: 3px
+				font-size: 50px
+				font-weight: 700	
+				animation: scaleY .25s 1s both
+		
+				@keyframes scaleY
+					0%
+						transform: scaleY(0)
+		
+			&:nth-of-type(1)
+				animation: fade-right .5s 1.25s both
+		
+				@keyframes fade-right
+					0%
+						opacity: 0
+						transform: translateX(-50px)
+		
+			&:nth-of-type(3)
+				animation: fade-left .5s 1.25s both
+		
+				@keyframes fade-left
+					0%
+						opacity: 0
+						transform: translateX(50px)
+		
+		> div
+			position: absolute
+			background: white
+		
+		.circle
+			top: -240px
+			left: -160px
+			width: 600px			
+			height: 600px
+			border-radius: 50%
+			animation: shrink .5s ease-in-out both
+	
+			@keyframes shrink
+				100%
+					transform: scale(0)
+	
+		.line-r
+			$length: 150px
+			$height: 70px
+			$thickness: 4px
+			top: 60px
+			left: $length - 8px				
+			animation: line-r-extend .75s .5s ease-in-out both
+	
+			&:before,
+			&:after
+				$bracket-width: 20px
+				display: block
+				content: ''
+				width: 0
+				height: $thickness
+				background: white
+				animation: bracket-r-extend .25s 1.25s both
+	
+				@keyframes bracket-r-extend
+					100%
+						width: $bracket-width
+						transform: translateX(-$bracket-width)
+		
+			&:after
+				margin-top: $height - (2 * $thickness)
+
+			@keyframes line-r-extend
+				0%
+					width: $length
+					height: $thickness
+					transform: translateX(-50%) scaleX(0)
+				33%
+					transform: none
+				66%
+					top: 60px
+					width: $length
+					height: $thickness
+					width: $length
+					transform: translateX(50%) scaleX(0)
+				67%
+					top: 60px - ($height / 2)
+					width: $thickness
+					height: $height
+					transform: scaleY(0) translateX($length)
+				100%
+					top: 60px - ($height / 2)
+					width: $thickness
+					height: $height
+					transform: scaleY(1) translateX($length)
+
+		.line-l
+			$length: 150px
+			$height: 70px
+			$thickness: 4px
+			top: 60px
+			left: -8px
+			animation: line-l-extend .75s .5s ease-in-out both
+	
+			@keyframes line-l-extend
+				0%
+					width: $length
+					height: $thickness
+					transform: translateX(50%) scaleX(0)
+				33%
+					transform: none
+				66%
+					top: 60px
+					width: $length
+					height: $thickness
+					width: $length
+					transform: translateX(-50%) scaleX(0)
+				67%
+					top: 60px - ($height / 2)
+					width: $thickness
+					height: $height
+					transform: scaleY(0)
+				100%
+					top: 60px - ($height / 2)
+					width: $thickness
+					height: $height
+					transform: scaleY(1)
+	
+			&:before,
+			&:after
+				$bracket-width: 20px
+				display: block
+				content: ''
+				width: 0
+				height: $thickness
+				background: white
+				animation: bracket-l-extend .25s 1.25s both
+				transform: translateX($thickness)
+	
+				@keyframes bracket-l-extend
+					100%
+						width: $bracket-width
+		
+			&:after
+				margin-top: $height - (2 * $thickness)
