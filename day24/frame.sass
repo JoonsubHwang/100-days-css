@@ -1,0 +1,110 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400)
+
+@mixin soft-shadow
+	box-shadow: 2px 8px 16px 0 rgba(0,0,0,0.2)
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+
+.frame
+	@include soft-shadow
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 7px
+	overflow: hidden	
+	background: linear-gradient(140deg, rgba(41,128,255,1) 0%, rgba(181,62,221,1) 30%, rgba(24,15,167,1) 100%)
+	font-family: 'Open Sans', Helvetica, sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+	
+		.button
+			width: 180px
+			height: 50px
+			border: 2px solid white
+			border-radius: 150px
+			font-size: 22px
+			color: white
+			display: flex
+			place-items: center			
+			place-content: center
+			transition: all .2s
+	
+			&:hover
+				border-color: black
+				color: black
+	
+			&.processing
+				animation: processing 3s both
+		
+				@keyframes processing
+					0%
+						border-color: black
+						color: black
+					10%
+						width: 50px
+						border-color: black
+						color: black
+					50%
+						border-color: black
+						background: none
+						color: black
+					70%, 90%
+						width: 50px
+						border-color: white
+						background: white
+		
+				p
+					display: none
+		
+				> img
+					display: block
+					animation: fade-in 3s both
+		
+					@keyframes fade-in
+						0%, 50%, 91%, 100%
+							opacity: 0
+						70%, 90%
+							opacity: 1
+		
+			> img
+				display: none
+		
+		svg
+			display: none
+			position: absolute
+			top: -3px
+			left: -3px
+			fill: none		
+			stroke-width: 2px
+			stroke-dasharray: 26 * 2 * 3.14
+			stroke-dashoffset: 26 * 2 * 3.14
+			transform: rotate(-90deg)
+			transform-origin: 30px 30px
+	
+			&.processing
+				display: block
+				animation: load 3s both
+		
+				@keyframes load
+					10%
+						stroke: white	
+					20%			
+						stroke-dashoffset: 26 * 2 * 3.14
+					50%			
+						opacity: 1
+						stroke-dashoffset: 0
+						transform: rotate(-90deg)
+					90%, 100%
+						opacity: 0
+						stroke: white	
+						stroke-dashoffset: 0
+						transform: rotate(-90deg) scale(2)
