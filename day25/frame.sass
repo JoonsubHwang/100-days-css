@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400)
+
+$gray: #dddddd
+$blue: #2755d6
+$red: #e82a2a
+
+@mixin soft-shadow
+	box-shadow: 2px 8px 16px 0 rgba(0,0,0,0.2)
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+
+.frame
+	@include soft-shadow
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 7px
+	background: $blue
+	overflow: hidden
+	font-family: 'Open Sans', Helvetica, sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+		
+		.map
+			position: absolute
+			top: -200px
+			left: -200px
+			width: 400px
+			height: 400px
+			fill: $gray
+		
+		.pin
+			position: absolute
+			top: -77px
+			left: -24px
+			width: 48px
+			height: 82px
+			fill: $red
+	
+			path
+				animation: float 2s ease-in-out alternate infinite both
+		
+				@keyframes float
+					100%
+						transform: translateY(-5px)
+		
+			ellipse
+				width: 20px
+				height: 6px
+				fill: rgba(0,0,0,.5)
+				animation: shadow 2s ease-in-out alternate infinite both
+				transform-origin: 24px 77px
+		
+				@keyframes shadow
+					100%
+						transform: scale(1.3) 
+					
