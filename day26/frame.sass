@@ -1,0 +1,111 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400)
+
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200)
+
+@mixin soft-shadow
+	box-shadow: 2px 8px 16px 0 rgba(0,0,0,0.2)
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+
+.material-symbols-outlined 
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48
+
+.frame
+	@include soft-shadow
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 7px
+	overflow: hidden
+	font-family: 'Open Sans', Helvetica, sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+	
+		input
+			display: none
+	
+			@for $i from 1 through 3
+				&#radio-#{$i}:checked ~ .card-#{$i}
+					// display: block
+					animation: slide-in .8s both
+	
+					@keyframes slide-in
+						0%
+							transform: translateX(400px)
+	
+			&#radio-1:checked ~ label[for='radio-2']
+				display: block
+			&#radio-2:checked ~ label[for='radio-3']
+				display: block
+			&#radio-3:checked ~ label[for='radio-1']
+				display: block
+	
+	
+		label
+			display: none
+			position: absolute
+			top: -14px
+			left: -14px + 125px + 40px
+			font-size: 28px
+			transition: all .1s
+	
+			&:hover
+				transform: scale(1.5)
+				color: #0077ff
+	
+		[class^='card']
+			@include soft-shadow
+			// display: none
+			position: absolute
+			top: -75px
+			left: -125px
+			width: 250px			
+			height: 150px
+			border-radius: 10px
+			background: white
+			animation: slide-out .8s both
+	
+			@keyframes slide-out
+				100%
+					transform: translateX(-400px)
+	
+			.index 
+				width: 27px
+				height: 27px
+				border-radius: 10px 0 10px 0
+				background: #2cc90c
+				color: white
+				display: flex
+				place-content: center				
+				place-items: center
+				font-size: 14px
+				font-weight: 600
+		
+			p
+				margin: 0
+				text-align: center
+		
+				&.title
+					margin: 0 27px 10px
+					font-size: 16px
+					font-weight: 700
+		
+				&.sentence
+					margin: 10px 27px 27px
+					height: 63px
+					font-size: 14px
+					font-weight: 400
+					display: flex
+					place-content: center				
+					place-items: center
+					
+		
