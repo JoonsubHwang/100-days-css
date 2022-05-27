@@ -3,7 +3,7 @@ A CSS challenge every day.
 
 All of my solutions for the challenges are demonstrated on [100dayscss.com/progress/joonsubhwang](https://100dayscss.com/progress/joonsubhwang).
 
-![Submitted Pens](https://i.gyazo.com/9f3ab0c5480cd951e6447354c658cd4b.gif)
+![Submitted Pens](https://i.gyazo.com/46f1195b4fd134cf124185f3823a3ae1.gif)
 
 <br/><br/>
 
