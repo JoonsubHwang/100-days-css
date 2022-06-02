@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400)
+
+@mixin soft-shadow
+	box-shadow: 2px 8px 16px 0 rgba(0,0,0,0.2)
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+
+.frame
+	@include soft-shadow
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 7px
+	overflow: hidden
+	font-family: 'Open Sans', Helvetica, sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+	
+		svg
+			position: absolute
+	
+		.bell
+			top: -28px
+			left: -25px
+			width: 50px
+			height: 54px
+			fill: red
+			animation: shake 2s .3s infinite both
+			transform-origin: 50% 0%
+	
+			@keyframes shake
+				5%, 15%, 25%, 35%
+					transform: rotate(5deg)
+				10%, 20%, 30%, 40%
+					transform: rotate(-5deg)
+				45%
+					transform: rotate(3deg)
+				50%
+					transform: rotate(-1deg)
+				55%
+					transform: none
+	
+		.wave
+			top: -75px
+			left: -75px
+			width: 150px
+			height: 150px
+			fill: none
+			stroke: red
+			stroke-width: 1.5px
+	
+			@for $i from 1 through 2
+				&:nth-child(#{$i})
+					animation: wave 2s ($i * .3s) infinite both
+	
+			@keyframes wave 
+				0%
+					opacity: 0
+					transform: scale(.8)
+				10%
+					opacity: 1
+				50%, 100%
+					opacity: 0
+					transform: scale(1.5)
+	
+			ellipse
+				stroke-dasharray: 2 * 40 * 3.14 / 4
+				stroke-dashoffset: 2 * 40 * 3.14 / 8
+			
