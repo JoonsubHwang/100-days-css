@@ -1,0 +1,112 @@
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap)
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400)
+
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0)
+
+@mixin soft-shadow
+	box-shadow: 2px 8px 16px 0 rgba(0,0,0,0.2)
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+
+.frame
+	@include soft-shadow
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 7px	
+	background: linear-gradient(160deg, rgba(180, 70, 199,1) 0%, rgba(87, 42, 150,1) 60%)
+	overflow: hidden
+	font-family: 'Open Sans', Helvetica, sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+	
+		.searchbar
+			@include soft-shadow
+			position: absolute
+			top: -120px
+			left: -125px
+			box-sizing: border-box
+			width: 250px			
+			height: 40px
+			border-radius: 20px
+			background: rgba(255,255,255,1)
+			padding: 5px 15px
+			display: flex
+			place-content: center
+			place-items: center
+	
+			> *
+				margin-top: -2px
+				color: rgb(87, 42, 150)
+	
+			input
+				outline: none
+				border: none
+				width: calc(100% - 24.2px)
+				padding: 0
+				background: none
+				font-size: 14px
+				font-weight: 300
+		
+				&::placeholder
+					opacity: .8
+					font-weight: 400
+					color: black
+		
+			.material-symbols-outlined
+				font-size: 20px
+		
+		.suggestions
+			@include soft-shadow
+			position: absolute
+			z-index: -1
+			box-sizing: border-box
+			top: -100px
+			left: -125px
+			width: 250px			
+			height: fit-content
+			max-height: 225px
+			border-radius: 0 0 10px 10px
+			padding: 30px 10px 15px
+			background: rgba(255,255,255,.4)
+			overflow-y: auto
+			// transition: height .2s
+			display: flex
+			flex-direction: column
+			-ms-overflow-style: none
+			scrollbar-width: none
+	
+			&.hidden
+				display: none
+					
+			&::-webkit-scrollbar
+				display: none
+	
+			> p
+				margin: 0
+				max-width: 100%
+				min-height: 21px
+				padding: 5px
+				border-radius: 5px
+				font-size: 14px
+				overflow: hidden
+				white-space: nowrap
+				text-overflow: ellipsis
+				color: black
+				transition: background .1s
+	
+				&.hidden
+					display: none
+				
+				&:hover
+					background: white
+			
