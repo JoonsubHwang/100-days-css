@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300,400)
+
+@mixin soft-shadow
+	box-shadow: 2px 8px 16px 0 rgba(0,0,0,0.2)
+	box-shadow: 0  8px  5px rgba(0, 0, 0, 0.05), 0 13px  9px rgba(0, 0, 0, 0.06), 0 21px 16px rgba(0, 0, 0, 0.08), 0 50px 40px rgba(0, 0, 0, 0.12)
+
+.frame
+	@include soft-shadow
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 400px
+	height: 400px
+	margin-top: -200px
+	margin-left: -200px
+	border-radius: 7px
+	background: rgba(87, 42, 150,1)
+	background: linear-gradient(150deg, rgba(180, 70, 199,1) 0%, rgba(87, 42, 150,1) 60%)
+	overflow: hidden
+	font-family: 'Open Sans', Helvetica, sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+	.center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+	
+		svg
+			position: absolute
+			top: -57.5px
+			left: -200px
+			width: 400px
+	
+			path
+				stroke: yellow
+				stroke-width: 8px
+				stroke-linecap: round
+				fill: none
+				stroke-dasharray: 4 700
+				animation: path 2s linear infinite
+
+				@keyframes path
+					0%
+						stroke-dashoffset: 704
+					100%
+						stroke-dashoffset: 0
+		
+			circle
+				opacity: 0
+				animation: fade 2s linear infinite
+
+				@keyframes fade
+					0%, 30%, 90%, 100%
+						opacity: 0
+					60%
+						opacity: .3
